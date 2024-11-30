@@ -37,3 +37,6 @@ configs/*/*/seed*/*
 
 .vscode-upload.json
 .mypy_cache
+
+
+VOC/*
