@@ -39,4 +39,4 @@ configs/*/*/seed*/*
 .mypy_cache
 
 
-VOC/*
+**/VOC/*
