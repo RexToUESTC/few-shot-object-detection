@@ -109,6 +109,22 @@ def main(args):
 
 if __name__ == "__main__":
     args = default_argument_parser().parse_args()
+
+    """
+    Base Training Command Example:
+    
+    python3 -m tools.train_net --num-gpus 8 \
+        --config-file configs/PascalVOC-detection/split1/faster_rcnn_R_101_base1.yaml
+    
+    """
+    if args.config_file == '':
+        args.config_file = "../configs/PascalVOC-detection/split1/faster_rcnn_R_101_FPN_base1.yaml"
+    if args.num_gpus == '':
+        args.num_gpus = 1
+    args.opts = []
+    args.opts.extend(['MODEL.DEVICE', 'mps'])
+    args.opts.extend(['SOLVER.IMS_PER_BATCH', 2])
+
     print("Command Line Args:", args)
     launch(
         main,
